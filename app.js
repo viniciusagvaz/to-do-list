@@ -2,10 +2,12 @@ const formAddTodo = document.querySelector(".form-add-todo");
 const inputSearchTodo = document.querySelector(".form-search input");
 const todosContainer = document.querySelector(".todos-container");
 
-const filterTodos = (todos, inputValue, returnMtachedTodos) => {
+
+
+const filterTodos = (todos, inputValue, returnMatchedTodos) => {
 	return todos.filter((todo) => {
 		const matechedTodos = todo.textContent.toLowerCase().includes(inputValue);
-		return returnMtachedTodos ? matechedTodos : !matechedTodos;
+		return returnMatchedTodos ? matechedTodos : !matechedTodos;
 	});
 };
 const manipulateClasses = (todos, classToAdd, classToRemove) => {
@@ -41,6 +43,8 @@ const addTodo = (inputValue) => {
 		event.target.reset();
 	}
 };
+
+
 
 inputSearchTodo.addEventListener("input", (event) => {
 	const inputValue = event.target.value.trim().toLowerCase();
