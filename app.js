@@ -2,8 +2,6 @@ const formAddTodo = document.querySelector(".form-add-todo");
 const inputSearchTodo = document.querySelector(".form-search input");
 const todosContainer = document.querySelector(".todos-container");
 
-
-
 const filterTodos = (todos, inputValue, returnMatchedTodos) => {
 	return todos.filter((todo) => {
 		const matechedTodos = todo.textContent.toLowerCase().includes(inputValue);
@@ -40,11 +38,9 @@ const addTodo = (inputValue) => {
         <i class="far fa-trash-alt" data-trash="${inputValue}"></i>
       </li>
       `;
-		event.target.reset();
+
 	}
 };
-
-
 
 inputSearchTodo.addEventListener("input", (event) => {
 	const inputValue = event.target.value.trim().toLowerCase();
@@ -63,4 +59,5 @@ formAddTodo.addEventListener("submit", (event) => {
 	const inputValue = event.target.add.value.trim();
 
 	addTodo(inputValue);
+   event.target.reset();
 });
